@@ -75,7 +75,7 @@ public class DemonicItem : MonoBehaviour {
     }
 
     void PerformVisitStartedActions() {
-        Debug.Log("Visit nr "+visitCount+" started!");
+        Debug.Log($"Player has just seen {gameObject.name}. It's the {visitCount} time!\n", gameObject);
         foreach (var action in actions) {
                     if (action.whichVisit == visitCount+1 && action.when == DemonicItemActionSet.When.Before)
                         action.Perform(gameObject, playerCamera.gameObject);
@@ -84,7 +84,7 @@ public class DemonicItem : MonoBehaviour {
 
     void PerformVisitCompleteActions() {
         visitCount++;
-        Debug.Log("Visit nr "+visitCount+" complete!");
+        Debug.Log($"Player has just stop seeing {gameObject.name}. It's the {visitCount} time!\n", gameObject);
         foreach (var action in actions) {
             if (action.whichVisit == visitCount && action.when == DemonicItemActionSet.When.After)
                 action.Perform(gameObject, playerCamera.gameObject);
