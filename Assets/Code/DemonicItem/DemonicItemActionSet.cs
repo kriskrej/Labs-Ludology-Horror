@@ -1,5 +1,4 @@
 ﻿using System;
-using Boo.Lang;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;
