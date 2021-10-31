@@ -1,4 +1,0 @@
-Niektóre ściany są na złej warstwie, szczególnie quady.
-Pokoje zrobione z quadów są strasznie niemodularne - lepiej im zrobić wspólnego rodzica.
-
-Na zajęciach robiliśmy skrypt do światła i skrypt Slenderman
