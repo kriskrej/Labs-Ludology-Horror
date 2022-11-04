@@ -21,10 +21,13 @@ public class DemonicItem : MonoBehaviour {
     }
 
     bool IsHitByRaycast() {
-        gameObject.SetActive(false);
+        var colliders = GetComponentsInChildren<Collider>();
+        foreach (var col in colliders)
+            col.enabled = false;
         var ret = !Physics.Linecast(playerCamera.transform.position, bounds.center, Consts.Layers.wallsFloorsCeilingsMask,
             QueryTriggerInteraction.Ignore);
-        gameObject.SetActive(true);
+        foreach (var col in colliders)
+            col.enabled = true;
         return ret;
     }
 
