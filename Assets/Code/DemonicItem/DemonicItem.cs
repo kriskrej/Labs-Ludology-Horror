@@ -21,8 +21,11 @@ public class DemonicItem : MonoBehaviour {
     }
 
     bool IsHitByRaycast() {
-        return !Physics.Linecast(playerCamera.transform.position, bounds.center, Consts.Layers.wallsFloorsCeilingsMask,
+        gameObject.SetActive(false);
+        var ret = !Physics.Linecast(playerCamera.transform.position, bounds.center, Consts.Layers.wallsFloorsCeilingsMask,
             QueryTriggerInteraction.Ignore);
+        gameObject.SetActive(true);
+        return ret;
     }
 
     bool IsInCameraDirection() {
