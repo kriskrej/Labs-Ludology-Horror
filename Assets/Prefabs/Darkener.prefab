@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114508030980341226}
   - component: {fileID: 114798137659572478}
   m_Layer: 8
-  m_Name: "\u015Aciemniacz"
+  m_Name: Darkener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
