@@ -298,21 +298,6 @@ public static class Extensions {
     }
 }
 
-public static class ScreenExtensions {
-
-    public static event Action<Resolution> ResolutionChanged;
-
-    public static void ApplyToScreen(this Resolution resolution, FullScreenMode fullScreenMode) {
-        Screen.SetResolution(resolution.width, resolution.height, fullScreenMode, resolution.refreshRate);
-#if UNITY_EDITOR
-        if (ResolutionChanged != null)
-            ((Action)(() => ResolutionChanged(resolution))).PerformAfterCoroutine<WaitForEndOfFrame>(2);
-#else
-        ResolutionChanged?.Invoke(resolution);
-#endif
-    }
-}
-
 public static class ActionExtensions {
     public static void PerformAfterCoroutine<T>(this Action action, int frames = 1) where T : YieldInstruction, new() {
         CoroutineBehaviour.StartCoroutine<T>(action, frames);
